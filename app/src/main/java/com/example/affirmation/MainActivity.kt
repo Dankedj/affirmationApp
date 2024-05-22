@@ -25,7 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.affirmation.data.Affirmation
-import com.example.affirmation.data.DataSource
+import com.example.affirmation.data.loadAffirmations
 import com.example.affirmation.ui.theme.AffirmationTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,13 +38,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                        AffirmationApplication(name = "Demo")
                 }
             }
         }
     }
 }
 
+@Composable
+fun AffirmationApplication(name: String, modifier: Modifier = Modifier) {
+
+    AffirmationList(affirmations = loadAffirmations(), modifier = Modifier)
+}
 
 @Composable
 fun AffirmationList(affirmations:List<Affirmation>,modifier:Modifier){
