@@ -1,5 +1,7 @@
 package com.example.affirmation.data
 
+import com.example.affirmation.R
+
 class DataSource {
     fun loadAffirmations(): List<Affirmation> {
         return listOf<Affirmation>(
