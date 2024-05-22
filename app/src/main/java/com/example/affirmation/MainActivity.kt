@@ -3,7 +3,6 @@ package com.example.affirmation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                        AffirmationApplication(name = "Demo")
+                        AffirmationApplication()
                 }
             }
         }
@@ -46,7 +45,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun AffirmationApplication(name: String, modifier: Modifier = Modifier) {
+fun AffirmationApplication( ) {
 
     AffirmationList(affirmations = loadAffirmations(), modifier = Modifier)
 }
