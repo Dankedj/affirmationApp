@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+
                 }
             }
         }
@@ -56,11 +56,11 @@ fun AffirmationCarte(affirmationObjet:Affirmation,modifier:Modifier=Modifier){
         Column {
             Image(
                 painter = painterResource(affirmationObjet.imageResource),
-                legende = stringResource(affirmationObjet.stringRessourcesId),
+                contentDescription = stringResource(affirmationObjet.stringRessourcesId),
                 modifier= Modifier
                     .fillMaxWidth()
                     .height(194.dp),
-                contentscale = ContentScale.Crop
+                contentScale = ContentScale.Crop
             )
             Text(text = LocalContext.current.getString(affirmationObjet.stringRessourcesId),
                 modifier = Modifier.padding(16.dp),
@@ -70,3 +70,9 @@ fun AffirmationCarte(affirmationObjet:Affirmation,modifier:Modifier=Modifier){
     }
 }
 
+@Preview
+@Composable
+private fun AffirmationCardPreview(){
+
+    AffirmationCarte(Affirmation(R.string.affirmation1,R.drawable.image1))
+}
